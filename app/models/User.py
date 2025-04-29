@@ -1,0 +1,10 @@
+class User:
+    def __init__(self,nome,cpf,email,senha,x,instagram,gostos):
+        self.nome = nome
+        self.cpf = cpf
+        self.email = email
+        self.senha = senha
+        self.x = x
+        self.instagram = instagram
+        self.gostos = gostos
+           
