@@ -1,0 +1,9 @@
+from app.models.User import User
+from app.service.db import db
+
+
+def create_user(nome, cpf, email, senha, x, instagram, gostos):
+    new_user = User(nome=nome, cpf=cpf, email=email, senha=senha, x=x, instagram=instagram, gostos=gostos)
+    db.session.add(new_user)
+    db.session.commit()
+    return new_user

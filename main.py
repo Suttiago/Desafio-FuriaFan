@@ -1,7 +1,13 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from config import Config
 from app.routes.user_routes import user_bp
+from app.service.db import db
+app = Flask(__name__,
+            template_folder="app/templates")
+app.config.from_object(Config)
 
-app = Flask(__name__)
+db.init_app(app)
 
 app.register_blueprint(user_bp)
 
